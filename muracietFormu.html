@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Başvuru Formu</title>
+    <!-- Bootstrap CSS dosyasını burada ekleyin -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Başvuru Formu</h2>
+        <form>
+            <div class="form-group">
+                <label for="isim">İsim:</label>
+                <input type="text" class="form-control" id="isim" name="isim">
+            </div>
+            <div class="form-group">
+                <label for="soyisim">Soyisim:</label>
+                <input type="text" class="form-control" id="soyisim" name="soyisim">
+            </div>
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyet:</label>
+                <select class="form-control" id="cinsiyet" name="cinsiyet">
+                    <option value="erkek">Erkek</option>
+                    <option value="kadın">Kadın</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="vatandaslik">Vatandaşlık:</label>
+                <input type="text" class="form-control" id="vatandaslik" name="vatandaslik">
+            </div>
+            <div class="form-group">
+                <label for="unvan">Ünvan:</label>
+                <input type="text" class="form-control" id="unvan" name="unvan">
+            </div>
+            <div class="form-group">
+                <label for="dogum_tarihi">Doğum Tarihi:</label>
+                <input type="date" class="form-control" id="dogum_tarihi" name="dogum_tarihi">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon:</label>
+                <input type="tel" class="form-control" id="telefon" name="telefon">
+            </div>
+            <div class="form-group">
+                <label for="diller">Diller:</label>
+                <input type="text" class="form-control" id="diller" name="diller">
+            </div>
+            <div class="form-group">
+                <label for="isliyormu">İşliyor mu?:</label>
+                <select class="form-control" id="isliyormu" name="isliyormu">
+                    <option value="evet">Evet</option>
+                    <option value="hayir">Hayır</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="isten_calismak">Kursu bitirdikten sonra hangi işte çalışmak istiyorsunuz?</label>
+                <input type="text" class="form-control" id="isten_calismak" name="isten_calismak">
+            </div>
+            <div class="form-group">
+                <label for="istirak_etmek_kurs">İştirak etmek istediğiniz kurs:</label>
+                <input type="text" class="form-control" id="istirak_etmek_kurs" name="istirak_etmek_kurs">
+            </div>
+            <div class="form-group">
+                <label for="tahsil">Halihazırda tahsil alıyor musunuz?</label>
+                <select class="form-control" id="tahsil" name="tahsil">
+                    <option value="evet">Evet</option>
+                    <option value="hayir">Hayır</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tecrube">İş tecrübeniz var mı?</label>
+                <select class="form-control" id="tecrube" name="tecrube">
+                    <option value="evet">Evet</option>
+                    <option value="hayir">Hayır</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tehsil_seviye">Tahsil seviyeniz:</label>
+                <input type="text" class="form-control" id="tehsil_seviye" name="tehsil_seviye">
+            </div>
+            <div class="form-group">
+                <label for="mezun_oldugu_okul">Bitirdiğiniz okul/universite adı:</label>
+                <input type="text" class="form-control" id="mezun_oldugu_okul" name="mezun_oldugu_okul">
+            </div>
+            <div class="form-group">
+                <label for="bitirdigi_bolum">Bitirdiğiniz bölüm:</label>
+                <input type="text" class="form-control" id="bitirdigi_bolum" name="bitirdigi_bolum">
+            </div>
+            <button type="submit" class="btn btn-primary">Gönder</button>
+        </form>
+    </div>
+    
+    <!-- Bootstrap JS dosyasını burada ekleyin -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
