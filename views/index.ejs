@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Müraciət formu</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    /* Özel CSS stilini burada ekleyebilirsiniz */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 60%;
+      margin: 0 auto;
+      background-color: skyblue;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    .form-check-input,
+    button[type="submit"] {
+
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    select {
+      appearance: none;
+      padding-right: 20px;
+      background: url('https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css') no-repeat right center / 15px;
+    }
+
+    .form-check-label {
+      font-weight: normal;
+    }
+
+    button[type="submit"] {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      color: #888;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <div class="d-flex">
+      <div class="col-6">
+        <div class="mt-2 mb-5">
+          <img src="/img/ALKAN.png" alt="Logo" width="150">
+        </div>
+      </div>
+      <div class="col-6 mt-5">
+        <h1 style="color: white;">Müraciət formu</h1>
+      </div>
+
+
+    </div>
+    <form id="request" action="forms" method="POST">
+
+      <div class="mb-3">
+        <label for="adSoyad" class="form-label">Ad Soyad</label>
+        <input type="text" class="form-control" id="adSoyad" name="adSoyad" required>
+      </div>
+      <div class="mb-3">
+        <label for="cinsiyet" class="form-label">Cins</label>
+        <select class="form-select" id="cinsiyet" name="cinsiyet" >
+          <option value="erkek">Kişi</option>
+          <option value="kadın">Qadın</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="vatandaslik" class="form-label">Vətəndaşlıq</label>
+        <select class="form-select" id="vatandaslik" name="vatandaslik">
+          <option value="azerbaycan">Azərbaycan</option>
+          <option value="diger">Xarici ölkə vətəndaşı</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="unvan" class="form-label">Ünvan</label>
+        <input type="text" class="form-control" id="unvan" name="unvan" required>
+      </div>
+      <div class="mb-3">
+        <label for="dogumTarihi" class="form-label">Doğum Tarixi</label>
+        <input type="date" class="form-control-date" id="dogumTarihi" name="dogumTarihi" required>
+      </div>
+      <div class="mb-3">
+        <label for="ehliyet" class="form-label">Sürücülük vəsiqəsi</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ehliyet" id="ehliyetVar" value="var" required>
+          <label class="form-check-label" for="ehliyetVar">
+            Var
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="ehliyet" id="ehliyetYok" value="yok">
+          <label class="form-check-label" for="ehliyetYok">
+            Yox
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">E-mail ünvanı</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+      </div>
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Telefon nömrəsi</label>
+        <input type="tel" class="form-control" id="mobile" name="mobile" required>
+      </div>
+
+
+      <!-- dil bilgisi -->
+      <label for="dilBilgisi" class="form-label">Dil Biliyi</label>
+      <div class="d-flex">
+        <div class="col-6">
+
+          <div class="mb-3">
+
+            <label for="dilBilgisi" class="form-label">Azərbaycan dili</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="azeriDilBilgisi" id="azeriPis" value="azeriPis" required>
+              <label class="form-check-label" for="azeriPis">
+                Pis
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="azeriDilBilgisi" id="azeriOrta" value="azeriOrta">
+              <label class="form-check-label" for="azeriOrta">
+                Orta
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="azeriDilBilgisi" id="azeriIyi" value="azeriIyi">
+              <label class="form-check-label" for="azeriIyi">
+                Yaxşı
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="dilBilgisi" class="form-label">Türk dili</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turkceDilBilgisi" id="turkcePis" value="turkcePis" required>
+              <label class="form-check-label" for="turkcePis">
+                Pis
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turkceDilBilgisi" id="turkceOrta" value="turkceOrta">
+              <label class="form-check-label" for="turkceOrta">
+                Orta
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="turkceDilBilgisi" id="turkceIyi" value="turkceIyi">
+              <label class="form-check-label" for="turkceIyi">
+                Yaxşı
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+
+          <div class="mb-3">
+            <label for="dilBilgisi" class="form-label">Rus dili</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ruscaDilBilgisi" id="ruscaPis" value="ruscaPis" required>
+              <label class="form-check-label" for="ruscaPis">
+                Pis
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ruscaDilBilgisi" id="ruscaOrta" value="ruscaOrta">
+              <label class="form-check-label" for="ruscaOrta">
+                Orta
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ruscaDilBilgisi" id="ruscaIyi" value="ruscaIyi">
+              <label class="form-check-label" for="ruscaIyi">
+                Yaxşı
+              </label>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="dilBilgisi" class="form-label">İngilis dili</label>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ingilizceDilBilgisi" id="ingilizcePis" value="ingilizcePis" required>
+              <label class="form-check-label" for="ingilizcePis">
+                Pis
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ingilizceDilBilgisi" id="ingilizceOrta" value="ingilizceOrta">
+              <label class="form-check-label" for="ingilizceOrta">
+                Orta
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="ingilizceDilBilgisi" id="ingilizceIyi" value="ingilizceIyi">
+              <label class="form-check-label" for="ingilizceIyi">
+                Yaxşı
+              </label>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+      <!-- dil biliyi son -->
+
+
+      <div class="mb-3">
+        <label for="isYeriVarMi" class="form-label">Rəsmi İş Yeriniz Var mı?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="isYeriVarMi" id="evet" value="evet" required>
+          <label class="form-check-label" for="evet">
+            Bəli
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="isYeriVarMi" id="hayir" value="hayir">
+          <label class="form-check-label" for="hayir">
+            Xeyir
+          </label>
+        </div>
+      </div>
+
+
+      <div class="mb-3">
+        <label for="voenVarMi" class="form-label">Hal hazırda aktiv VÖEN-iniz var?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="voenVarMi" id="evetVoen" value="evet" required>
+          <label class="form-check-label" for="evetVoen">
+            Bəli
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="voenVarMi" id="hayirVoen" value="hayir">
+          <label class="form-check-label" for="hayirVoen">
+            Xeyir
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="istenenVezifeler" class="form-label">Kursu bitirəndən sonra bu vəzifələrdən hansında işləmək istərdiniz?</label>
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="muhasib" value="muhasib">
+              <label class="form-check-label" for="muhasib">
+                Mühasib
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="dataAnalitik" value="dataAnalitik">
+              <label class="form-check-label" for="dataAnalitik">
+                Data Analitik
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="qrafikDizayner" value="qrafikDizayner">
+              <label class="form-check-label" for="qrafikDizayner">
+                Qrafik Dizayner
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="cagriMerkezi" value="cagriMerkezi">
+              <label class="form-check-label" for="cagriMerkezi">
+                Çağrı Mərkəzi
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="xezinedar" value="xezinedar">
+              <label class="form-check-label" for="xezinedar">
+                Xezinedar
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="cagriMerkeziOperatoru" value="cagriMerkeziOperatoru">
+              <label class="form-check-label" for="cagriMerkeziOperatoru">
+                Çağrı Mərkəzi Operatoru
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="laborant" value="laborant">
+              <label class="form-check-label" for="laborant">
+                Laborant
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="barmen" value="barmen">
+              <label class="form-check-label" for="barmen">
+                Barmen
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="helpdesk" value="helpdesk">
+              <label class="form-check-label" for="helpdesk">
+                Helpdesk
+              </label>
+            </div>
+          </div>
+          <div class="col-6">
+
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="qeydiyyatci" value="qeydiyyatci">
+              <label class="form-check-label" for="qeydiyyatci">
+                Qeydiyyatçı
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="kimyeviAnalizLaboranti" value="kimyeviAnalizLaboranti">
+              <label class="form-check-label" for="kimyeviAnalizLaboranti">
+                Kimyəvi Analiz Laborantı
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="aspaz" value="aspaz">
+              <label class="form-check-label" for="aspaz">
+                Aspaz
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="saticiKassir" value="saticiKassir">
+              <label class="form-check-label" for="saticiKassir">
+                Satıcı Kassir
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="ofisiant" value="ofisiant">
+              <label class="form-check-label" for="ofisiant">
+                Ofisiant
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="senayeIscisi" value="senayeIscisi">
+              <label class="form-check-label" for="senayeIscisi">
+                Sənaye İşçisi
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="butunVezifeler" value="butunVezifeler">
+              <label class="form-check-label" for="butunVezifeler">
+                Bütün Vəzifələr Mənə Uygundur
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="senayeIscisi" value="uygunsuz">
+              <label class="form-check-label" for="uygunsuz">
+                Bu vezifeler mene uygun deyil
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="mb-3">
+        <label for="istenenVezifeler" class="form-label">İştirak etmək istədiyiniz kursu və ya bir neçə kursu seçin</label>
+
+        <div class="d-flex">
+          <div class="col-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="muhasib" value="muhasib">
+              <label class="form-check-label" for="muhasib">
+                Mühasib
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="dataAnalitik" value="dataAnalitik">
+              <label class="form-check-label" for="dataAnalitik">
+                Data Analitik
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="qrafikDizayner" value="qrafikDizayner">
+              <label class="form-check-label" for="qrafikDizayner">
+                Qrafik Dizayner
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="cagriMerkezi" value="cagriMerkezi">
+              <label class="form-check-label" for="cagriMerkezi">
+                Çağrı Mərkəzi
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="xezinedar" value="xezinedar">
+              <label class="form-check-label" for="xezinedar">
+                Xəzinədar
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="cagriMerkeziOperatoru" value="cagriMerkeziOperatoru">
+              <label class="form-check-label" for="cagriMerkeziOperatoru">
+                Çağrı Mərkəzi Operatoru
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="laborant" value="laborant">
+              <label class="form-check-label" for="laborant">
+                Laborant
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="barmen" value="barmen">
+              <label class="form-check-label" for="barmen">
+                Barmen
+              </label>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="helpdesk" value="helpdesk">
+              <label class="form-check-label" for="helpdesk">
+                Helpdesk
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="qeydiyyatci" value="qeydiyyatci">
+              <label class="form-check-label" for="qeydiyyatci">
+                Qeydiyyatçı
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="kimyeviAnalizLaboranti" value="kimyeviAnalizLaboranti">
+              <label class="form-check-label" for="kimyeviAnalizLaboranti">
+                Kimyəvi Analiz Laborantı
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="aspaz" value="aspaz">
+              <label class="form-check-label" for="aspaz">
+                Aspaz
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="saticiKassir" value="saticiKassir">
+              <label class="form-check-label" for="saticiKassir">
+                Satıcı Kassir
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="ofisiant" value="ofisiant">
+              <label class="form-check-label" for="ofisiant">
+                Ofisiant
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" name="istenenVezifeler[]" id="senayeIscisi" value="senayeIscisi">
+              <label class="form-check-label" for="senayeIscisi">
+                Sənayə İşçisi
+              </label>
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+      <div class="mb-3">
+        <label for="eyaniTehsil" class="form-label">Hal hazırda əyani təhsil alırsınız?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="eyaniTehsil" id="evetEyani" value="evet">
+          <label class="form-check-label" for="evetEyani">
+            Bəli
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="eyaniTehsil" id="hayirEyani" value="hayir">
+          <label class="form-check-label" for="hayirEyani">
+            Xeyir
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="isTecrube" class="form-label">İş tecrübəniz var mı?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="isTecrube" id="evetTecrube" value="evet">
+          <label class="form-check-label" for="evetTecrube">
+            Bəli
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="isTecrube" id="hayirTecrube" value="hayir">
+          <label class="form-check-label" for="hayirTecrube">
+            Xeyir
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="tehsilSeviyesi" class="form-label">Təhsil səviyyəniz:</label>
+        <select class="form-select" id="tehsilSeviyesi" name="tehsilSeviyesi">
+          <option value="ali">Ali</option>
+          <option value="orta">Orta</option>
+          <option value="peseTehsili">Peşə Təhsili</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="tehsilMuessisesi" class="form-label">Bitirdiyiniz təhsil müəssisəsinin adı:</label>
+        <input type="text" class="form-control" id="tehsilMuessisesi" name="tehsilMuessisesi">
+      </div>
+      <div class="mb-3">
+        <label for="ixtisas" class="form-label">Hansı ixtisası bitirmisiniz?</label>
+        <input type="text" class="form-control" id="ixtisas" name="ixtisas">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Bizim haqqımızda haradan məlumat almısınız?</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="kaynak" id="sosialMedia" value="sosialMedia"  required>
+          <label class="form-check-label" for="sosialMedia">
+            Sosial Media
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="kaynak" id="tuib" value="tuib">
+          <label class="form-check-label" for="tuib">
+            TUIB
+          </label>
+        </div>
+
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="kaynak" id="jobBossAz" value="jobBossAz">
+          <label class="form-check-label" for="jobBossAz">
+            Job.az / Boss.az
+          </label>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="tecrubeTeyidi" class="form-label">Təcrübənin iş təsvirlərini oxudum və şərtləri, başlama və bitmə tarixlərini tam başa düşdüm *</label>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" name="tecrubeTeyidi" id="tecrubeTeyidi" value="true" required>
+          <label class="form-check-label" for="tecrubeTeyidi">
+            Bəli
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Göndər</button>
+    </form>
+  </div>
+  <!-- Bootstrap JS ve jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
