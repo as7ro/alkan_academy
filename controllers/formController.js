@@ -44,7 +44,7 @@ const getAllForms = async(req,res)=>{
 
 const getForm = async(req,res)=>{
     try {
-        const forms = await Form.findById({_id : req.params.id})
+        const form = await Form.findById({_id : req.params.id})
         res.status(200).render('form',{
             form
         })
