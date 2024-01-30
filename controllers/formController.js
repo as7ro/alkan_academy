@@ -1,12 +1,12 @@
 import Form from "../models/formModel.js";
 
-const createForm = async(req,res)=>{
+const createForm = async (req, res) => {
     try {
         const form = await Form.create(req.body);
-res.status(201).render("ugurlu")
+        res.status(201).render("ugurlu")
     } catch (error) {
         res.status(500).json({
-            succeded:false,
+            succeded: false,
             error
         })
     }
@@ -14,27 +14,16 @@ res.status(201).render("ugurlu")
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-const getAllForms = async(req,res)=>{
+const getAllForms = async (req, res) => {
     try {
         const forms = await Form.find({})
-        res.status(200).render('forms',{
+        res.status(200).render('forms', {
             forms
         })
 
     } catch (error) {
-           res.status(500).json({
-            succeded:false,
+        res.status(500).json({
+            succeded: false,
             error
         })
     }
@@ -42,20 +31,20 @@ const getAllForms = async(req,res)=>{
 
 
 
-const getForm = async(req,res)=>{
+const getForm = async (req, res) => {
     try {
-        const form = await Form.findById({_id : req.params.id})
-        res.status(200).render('form',{
+        const form = await Form.findById({ _id: req.params.id })
+        res.status(200).render('form', {
             form
         })
 
     } catch (error) {
-           res.status(500).json({
-            succeded:false,
+        res.status(500).json({
+            succeded: false,
             error
         })
     }
 }
 
 
-export {createForm,getAllForms,getForm};
+export { createForm, getAllForms, getForm };

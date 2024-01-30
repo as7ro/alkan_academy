@@ -12,5 +12,11 @@ const getRegisterPage = (req, res) => {
 const getLoginPage = (req, res) => {
     res.render("login")
 }
+const getLogout = (req, res) => {
+    res.cookie("jwt","",{
+        maxAge:1,
+    });
+    res.redirect("/login")
+}
 
-export { getIndexPage, getAboutPage,getRegisterPage, getLoginPage };
+export { getIndexPage, getAboutPage,getRegisterPage, getLoginPage, getLogout };

@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import pageRoute from "./routes/pageRoute.js"
 import formRoute from "./routes/formRoute.js"
 import userRoute from "./routes/userRoute.js"
+import { checkUser } from "./middlewares/authMiddleware.js";
 
 
 dotenv.config();
@@ -31,7 +32,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(cookieParser());
 
 //routes
-
+app.get("*",checkUser)
 app.use("/",pageRoute);
 app.use("/forms",formRoute);
 app.use("/users",userRoute)

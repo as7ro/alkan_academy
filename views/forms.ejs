@@ -1,17 +1,92 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>formlar</title>
-</head>
-<body>
-    
-    <% for (form of forms){ %>
-<h1><%=form.adSoyad  %></h1>
-<a href="/forms/<%= form._id %>"><%-form.adSoyad  %></a>
+<%- include('./partials/headerPartials.ejs') %>
 
-  <%  } %>
+            <!-- Navbar End -->
+            <%- include('./partials/menuPartials.ejs') %>
+        <!-- Sidebar End -->
 
+
+        <!-- Content Start -->
+      
+            <!-- Navbar End -->
+
+
+            <!-- Table Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+               
+                    <div class="col-12">
+                        <div class="bg-secondary rounded h-100 p-4">
+                            <h6 class="mb-4">Responsive Table</h6>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Ad Soyad</th>
+                                            <th scope="col">Mobile</th>
+                                            <th scope="col">Email</th>
+                                            <th scope="col">Cins</th>
+                                            <th scope="col">Ünvan</th>
+                                            <th scope="col">ətraflı</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                      <% let counter = 1; %>
+                                      <% forms.reverse().forEach(form => { %>
+                                        <tr>
+                                            <th scope="row"><%- counter++ %></th>
+                                            <td><%- form.adSoyad %></td>
+                                            <td><%- form.mobile %></td>
+                                            <td><%- form.email %></td>
+                                            <td><%- form.cinsiyet %></td>
+                                            <td><%- form.unvan %></td>
+                                            <td><a href="/forms/<%= form._id %>"><i class="fa fa-eye"></i></a></td>
+                                        </tr>
+                                    <% }) %>
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Table End -->
+
+
+            <!-- Footer Start -->
+            <div class="container-fluid pt-4 px-4">
+                <div class="bg-secondary rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Alkan Academy</a>, All Right Reserved OKa 
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+            <!-- Footer End -->
+        </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/chart/chart.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>

@@ -1,55 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Müraciət Məlumatları</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-        }
-        .container {
-            max-width: 60%;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 50px;
-        }
-        h2 {
-            text-align: center;
-            color: #007bff;
-        }
-        p {
-            font-weight: bold;
-            color: #555;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <h2>Müraciət Məlumatları</h2>
-        <div>
-            <p>Ad Soyad: <span > <%- form.adSoyad %> </span></p>
-            <p>Cins: <span></span></p>
-            <p>Vətəndaşlıq: <span"> <%=form.vatandaslik %></span></p>
-            <p>Ünvan: <span ></span></p>
-            <p>Doğum Tarixi: <span ></span></p>
-            <p>Sürücülük vəsiqəsi: <span ></span></p>
-            <p>E-mail ünvanı: <span > <%=form.email  %></span></p>
-            <p>Telefon nömrəsi: <span></span></p>
-            <!-- Diğer alanları da aynı şekilde ekleyebilirsiniz -->
-        </div>
-    </div>
 
-    <!-- Bootstrap JS ve jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Müraciət Məlumatları</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 60%;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-top: 50px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #007bff;
+    }
+
+    p {
+      background-color: yellowgreen;
+      font-weight: bold;
+      padding-left: 25px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    span {
+      width: 500px;
+      background-color: skyblue;
+padding-top: 5px;
+padding-bottom: 5px;
+
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container mt-5">
+    <h2>Müraciət Məlumatları</h2>
+    <div>
+      <p>Ad Soyad: <span> <%- form.adSoyad %> </span></p>
+      <p>Cinsiyyət: <span><%- form.cinsiyet %> </span></p>
+      <p>Mobile: <span><%- form.mobile %> </span></p>
+      <p>Vətəndaşlıq: <span> <%-form.vatandaslik %></span></p>
+      <p>Ünvan: <span><%- form.unvan %> </span></p>
+      <p>Doğum Tarixi: <span><%- form.dogumTarihi %> </span></p>
+      <p>Sürücülük vəsiqəsi: <span><%- form.ehliyet %> </span></p>
+      <p>E-mail ünvanı: <span><%- form.email %> </span></p>
+      <p>Azərbaycan dili: <span><%- form.azeriDilBilgisi %> </span></p>
+      <p>Türk dili: <span><%- form.turkceDilBilgisi %> </span></p>
+      <p>Rus dili: <span><%- form.ruscaDilBilgisi %> </span></p>
+      <p>İngilis dili: <span><%- form.ingilizceDilBilgisi %> </span></p>
+      <p>Rəsmi iş yeri var?: <span><%- form.isYeriVarMi %> </span></p>
+      <p>Vöen var?: <span><%- form.voenVarMi %> </span></p>
+      <p>işləmək istədiyiniz vəzifələr: <span><%- form.istenenVezifeler %> </span></p>
+      <p>İştirak etmək istədiyiniz kurslar: <span><%- form.ihtiyacDuyulanKurslar %> </span></p>
+      <p>Əyani təhsil var?: <span><%- form.eyaniTehsil %> </span></p>
+      <p>İş təcrübəsi var?: <span><%- form.isTecrube %> </span></p>
+      <p>Təhsil səviyyəsi?: <span><%- form.tehsilSeviyesi %> </span></p>
+      <p>Təhsil müəssisəsi?: <span><%- form.tehsilMuessisesi %> </span></p>
+      <p>İxtisas?: <span><%- form.ixtisas %> </span></p>
+      <p>Haqqımızda haradan məlumat almısınız?: <span><%- form.kaynak %> </span></p>
+
+      <!-- Diğer alanları da aynı şekilde ekleyebilirsiniz -->
+    </div>
+  </div>
+
+  <!-- Bootstrap JS ve jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.min.js"></script>
 
 
 </body>
+
 </html>
