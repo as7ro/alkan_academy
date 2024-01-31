@@ -62,7 +62,7 @@ padding-bottom: 5px;
       <p>Mobile: <span><%- form.mobile %> </span></p>
       <p>Vətəndaşlıq: <span> <%-form.vatandaslik %></span></p>
       <p>Ünvan: <span><%- form.unvan %> </span></p>
-      <p>Doğum Tarixi: <span><%- form.dogumTarihi %> </span></p>
+      <p>Doğum Tarixi: <span><%- (form.dogumTarihi) ?  form.dogumTarihi.toISOString().split('T')[0] : ''  %> </span></p>
       <p>Sürücülük vəsiqəsi: <span><%- form.ehliyet %> </span></p>
       <p>E-mail ünvanı: <span><%- form.email %> </span></p>
       <p>Azərbaycan dili: <span><%- form.azeriDilBilgisi %> </span></p>
